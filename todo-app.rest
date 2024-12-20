@@ -1,0 +1,47 @@
+### GET /
+GET http://localhost:3000/
+
+### POST /auth/register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username":"ashish@gmail.com",
+    "password":"12345678"
+}
+
+### LOGIN router /auth/login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username":"ashish@gmail.com",
+    "password":"12345678"
+}
+
+### GET /todos {protected}
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjY1MzE2LCJleHAiOjE3MzQ3NTE3MTZ9.00AZefVy5iRyVANlBWxphbhQuBGEXRzrRNhrpTzR3cA
+
+### Post todos
+POST http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjY1MzE2LCJleHAiOjE3MzQ3NTE3MTZ9.00AZefVy5iRyVANlBWxphbhQuBGEXRzrRNhrpTzR3cA
+Content-type: application/json 
+
+{
+    "task":"hello this is ashish"
+}
+
+### UPDATE TODO /TODOS/:ID {protected}
+PUT http://localhost:3000/todos/2 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjY1MzE2LCJleHAiOjE3MzQ3NTE3MTZ9.00AZefVy5iRyVANlBWxphbhQuBGEXRzrRNhrpTzR3cA
+Content-type: application/json 
+
+{
+    "completed": 1,
+    "task" : "completed the node js tutorial"
+}
+
+### DELETE todo /TODOS/:ID {protected}
+DELETE  http://localhost:3000/todos/2 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjY1MzE2LCJleHAiOjE3MzQ3NTE3MTZ9.00AZefVy5iRyVANlBWxphbhQuBGEXRzrRNhrpTzR3cA
